@@ -1,6 +1,10 @@
 class Robo{
 public static void main(String args[0]){
-			String a[]=input3.split("-");
+	int input1=3;//3 3 2-2-E  R M L M L M
+        int input2=3;
+        String input3="2-2-E";
+        String input4="R M L M L M";
+	String a[]=input3.split("-");
 		int init1=Integer.parseInt(a[0]);
 		init1=init1-input1;
 		int init2=Integer.parseInt(a[1]);
@@ -36,18 +40,18 @@ public static void main(String args[0]){
 		}
 		else
 		{
-			if(ax=='d' &&(init2>0 ||init2<input2)){ init2--;}
-			else if(ax=='i' &&(init2>-1 ||init2<input2-1)){ init2++;}
-			else if(ay=='i' &&(init1>-1 ||init1<input1-1)){ init1++;}
+			if(ax=='d' &&(init1>0 ||init1<input2)){ init1--;}
+			else if(ax=='i' &&(init1>-1 ||init2<input2)){ init1++;}
+			else if(ay=='i' &&(init2>-1 ||init2<input1)){ init2++;}
 			else{ 
-				if(ay=='d' &&(init1>0 ||init1<input1)){init1--;}}
+				if(ay=='d' &&(init2>0 ||init2<input1)){init2--;}}
 		}
 		i++;
 		}
-		init1=input1-init1-1;
-		init2=input2-init2-1;
+		init1=init1;
+		init2=init2;
 		String res="";
 		res=res+Integer.toString(init1)+"-"+Integer.toString(init2)+"-"+Character.toString(d);
-		return (res);
+		System.out.println(res);// 3-2-N
 }
 }
