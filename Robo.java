@@ -1,8 +1,10 @@
 class Robo{
 public static void main(String args[0]){
-	String a[]=input3.split("-");
+			String a[]=input3.split("-");
 		int init1=Integer.parseInt(a[0]);
+		init1=init1-input1;
 		int init2=Integer.parseInt(a[1]);
+		init2=init2-input2;
 		String mm=a[2];
 		char d=mm.charAt(0);
 		input4=input4.replaceAll(" ","");
@@ -21,23 +23,24 @@ public static void main(String args[0]){
 			if (dir[i]!='M'){
 			if ((d=='E' && dir[i]=='R') || (d=='W' && dir[i]=='L')) {
 				d='S';
-				ax='d';}
+				ay='i';}
 			else if((d=='E' &&(dir[i])=='L') || (d=='W' && dir[i]=='R')){ 
 				d='N';
-				ax='i';}
+				ay='d';}
 			else if ((d=='N' && dir[i]=='R') || (d=='S' && dir[i]=='L')) {
 				d='E';
-				ay='i';}
+				ax='i';}
 			else { 
 				d='W';
-				ay='d';}
+				ax='d';}
 		}
 		else
 		{
 			if(ax=='d' &&(init2>0 ||init2<input2)){ init2--;}
 			else if(ax=='i' &&(init2>-1 ||init2<input2-1)){ init2++;}
 			else if(ay=='i' &&(init1>-1 ||init1<input1-1)){ init1++;}
-			else{ init1--;}
+			else{ 
+				if(ay=='d' &&(init1>0 ||init1<input1)){init1--;}}
 		}
 		i++;
 		}
